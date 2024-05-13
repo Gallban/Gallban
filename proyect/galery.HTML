@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería Fotográfica</title>
+<style>
+  .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-container {
+    margin: 10px;
+  }
+  img {
+    width: 200px;
+    height: 150px;
+    border: 2px solid black;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="gallery">
+  <div class="image-container">
+    <img src="Z1.jpg" alt="Imagen 1 - carro">
+  </div>
+  <div class="image-container">
+    <img src="Z2.jpeg" alt="Imagen 2 - pc">
+  </div>
+  <div class="image-container">
+    <img src="Z3.jpg" alt="Imagen 3 - teclado">
+  </div>
+  <div class="image-container">
+    <img src="Z4.jpg" alt="Imagen 4 - serv">
+  </div>
+  <div class="image-container">
+    <img src="Z5.jpeg" alt="Imagen 5 - Doom">
+  </div>
+  <div class="image-container">
+    <img src="Z6.jpg" alt="Imagen 6 - tax">
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    var images = document.querySelectorAll('.image-container img');
+    for (var i = 0; i < images.length; i++) {
+      images[i].setAttribute('tabindex', '0');
+      images[i].addEventListener('focus', function() {
+        console.log('Imagen enfocada:', this.alt);
+      });
+      images[i].addEventListener('blur', function() {
+        console.log('Imagen fuera de foco:', this.alt);
+      });
+    }
+  };
+</script>
+
+</body>
+</html>
